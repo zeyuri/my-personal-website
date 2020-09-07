@@ -1,19 +1,21 @@
-import styled from "styled-components"
-import Header from "./Header"
-import Footer from "./Footer"
+import { Box, Link, Flex } from "@chakra-ui/core"
 
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 1024px;
-  height: 94vh;
-  display: flex;
-  flex-direction: column;
-`
+const Layout = ({ children }) => {
+  return (
+    <Box maxW="60rem" w="100%" marginX="auto">
+      <Header />
+      {children}
+    </Box>
+  )
+}
 
-export default ({ children }) => (
-  <Container>
-    <Header />
-    {children}
-    <Footer />
-  </Container>
-)
+const Header = () => {
+  return (
+    <Flex as="header" justify="space-between" align="center" w="100%">
+      <h1>zeyuri</h1>
+      <Link href="#">teste</Link>
+    </Flex>
+  )
+}
+
+export default Layout
